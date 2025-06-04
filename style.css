@@ -1,0 +1,52 @@
+body{
+    background-color:rgb(173, 239, 255);
+    text-align: center;
+    
+}
+
+.container{
+    text-align: center;
+    background-color: rgb(4, 60, 145);
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    margin-left: 34%;
+    margin-top: 10%;
+} 
+
+/*Altera todos os h das paginas padronizando*/
+
+.Paragrafos{
+    color: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:xx-large;
+}
+
+/*Altera todos as div com button ou input*/
+
+.botoes{
+   margin: 10px;
+}
+
+.caixaTexto{
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+a{
+    color:  rgb(0, 162, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+    cursor: pointer;
+}
+
+img{
+    width: 200px;
+    height: 250px;
+    position: relative;
+    
+}
+
+button{
+    background-color: rgb(0, 0, 0);
+    color: aqua;
+}

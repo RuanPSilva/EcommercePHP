@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
 
         $Usuario = $_POST["email"];
         $Senha = $_POST["password"];
-
+        
                                         
         $resultadoQuery = db_query("insert into tb_usuario(email, senha, ativo) values ('$Usuario', '$Senha', 's');", $mySQL);
         if ($resultadoQuery) {
