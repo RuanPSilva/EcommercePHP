@@ -35,15 +35,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['Pesquisar'])) {
         $codigo = $_POST["codigo"];
-        $resultadoQuery = db_query("select * from tb_produto where cod_prod = $codigo;", $mySQL);
-        if ($resultadoQuery) {
-            while ($linha = $resultadoQuery->fetch_assoc()) {
-                $codigo = $linha['cod_prod'];
-                $nome = $linha['nome_prod'];
-                $descricao = $linha['descricao_prod'];
-                $preco = $linha['preco_prod'];
-                $img = $linha['img_path'];
+        if ($codigo != null) {
+            $resultadoQuery = db_query("select * from tb_produto where cod_prod = $codigo;", $mySQL);
+
+            if ($resultadoQuery) {
+                if ($resultadoQuery->num_rows > 0) {
+                    while ($linha = $resultadoQuery->fetch_assoc()) {
+                        $codigo = $linha['cod_prod'];
+                        $nome = $linha['nome_prod'];
+                        $descricao = $linha['descricao_prod'];
+                        $preco = $linha['preco_prod'];
+                        $img = $linha['img_path'];
+                    }
+                } else {
+                    $_SESSION['situacao_query'] = "O código:$codigo não existe!";
+                }
             }
+
+        } else {
+            $_SESSION['situacao_query'] = "Utilize um código válido para efetuar a pesquisa!";
         }
     }
 
@@ -54,28 +64,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $descricao = $_POST["descricao"];
         $preco = $_POST["preco"];
         $img = $_POST["img"];
-
-        $resultadoQuery = db_query("select * from tb_produto where cod_prod = $codigo;", $mySQL);
-        if ($resultadoQuery) {
-            $_SESSION['situacao_query'] = "O código:$codigo já está sendo utilizado!";
-            if ($resultadoQuery->num_rows != 0) {
-                while ($linha = $resultadoQuery->fetch_assoc()) {
-                    $codigo = $linha['cod_prod'];
-                    $nome = $linha['nome_prod'];
-                    $descricao = $linha['descricao_prod'];
-                    $preco = $linha['preco_prod'];
-                    $img = $linha['img_path'];
+        if ($codigo != null) {
+            $resultadoQuery = db_query("select * from tb_produto where cod_prod = $codigo;", $mySQL);
+            if ($resultadoQuery) {
+                if ($resultadoQuery->num_rows > 0) {
+                    $_SESSION['situacao_query'] = "O código:$codigo já está sendo utilizado!";
                 }
+            } else {
+                $resultadoQuery = db_query("insert into tb_produto values(null,$codigo,'$nome','$descricao',$preco,'$img');", $mySQL);
+                $_SESSION['situacao_query'] = "Cadastro efetuado com sucesso!";
             }
         } else {
-            $resultadoQuery = db_query("insert into tb_produto values(null,$codigo,'$nome','$descricao',$preco,'$img');", $mySQL);
-            $_SESSION['situacao_query'] = "Cadastro efetuado com sucesso!";
+            $_SESSION['situacao_query'] = "O código não pode ser cadastrado vazio!";
         }
-
-
-
     }
-
     if (isset($_POST['Editar'])) {
         $codigo = $_POST["codigo"];
         $nome = $_POST["nome"];
@@ -84,25 +86,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $img = $_POST["img"];
 
         $resultadoQuery = db_query("select * from tb_produto where cod_prod = $codigo;", $mySQL);
-        if ($resultadoQuery->num_rows > 0) {
-            $_SESSION['situacao_query'] = "O código:$codigo não existe!";
+        if ($resultadoQuery) {
+            if ($resultadoQuery->num_rows > 0) {
+                $resultadoQuery = db_query("SET SQL_SAFE_UPDATES = 0;", $mySQL);
+                $resultadoQuery = db_query("update tb_produto set 
+                cod_prod= $codigo,
+                nome_prod = '$nome',
+                descricao_prod ='$descricao',
+                preco_prod= '$preco',
+                img_path = '$img' 
+                where cod_prod= $codigo;", $mySQL);
+                $resultadoQuery = db_query("SET SQL_SAFE_UPDATES = 1;", $mySQL);
+                $_SESSION['situacao_query'] = "Produto atualizado com sucesso!";
+            } else {
+                $_SESSION['situacao_query'] = "O código:$codigo não existe!";
+            }
         }
-
-        $resultadoQuery = db_query("SET SQL_SAFE_UPDATES = 0;", $mySQL);
-        $resultadoQuery = db_query("update tb_produto set 
-    cod_prod= $codigo,
-    nome_prod = '$nome',
-	descricao_prod ='$descricao',
-    preco_prod= '$preco',
-    img_path = '$img' 
-    where cod_prod= $codigo;", $mySQL);
-        $resultadoQuery = db_query("SET SQL_SAFE_UPDATES = 1;", $mySQL);
-
-
     }
-
     if (isset($_POST['Excluir'])) {
 
+         if ($codigo != null) {
+            $resultadoQuery = db_query("select * from tb_produto where cod_prod = $codigo;", $mySQL);
+
+            if ($resultadoQuery) {
+                if ($resultadoQuery->num_rows > 0) {
+                    $resultadoQuery = db_query("select * from tb_produto where cod_prod = $codigo;", $mySQL);
+                } else {
+                    $_SESSION['situacao_query'] = "O código:$codigo não existe!";
+                }
+            }
+
+        } else {
+            $_SESSION['situacao_query'] = "Utilize um código válido para executar a exclusão!";
+        }
     }
 
     if (isset($_POST['Limpar'])) {
