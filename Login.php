@@ -45,6 +45,7 @@ session_start();
             }
         ?>
     </div>
+        <!--Colocar a imagem na lateral do forms-->
      <img src="img/pato1.png">
 </body>
 </html>
