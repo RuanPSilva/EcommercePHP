@@ -1,52 +1,128 @@
-body{
-    background-color:rgb(173, 239, 255);
+body {
+    background-color: rgb(173, 239, 255);
     text-align: center;
-    
 }
 
-.container{
-    text-align: center;
+.containerPrincipal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.container {
     background-color: rgb(4, 60, 145);
-    width: 450px;
-    height: 250px;
+    width: 440px;
+    padding: 20px;
     border-radius: 10px;
-    margin-left: 34%;
-    margin-top: 10%;
-} 
+    text-align: center;
+}
 
-/*Altera todos os h das paginas padronizando*/
-
-.Paragrafos{
+/* Título */
+.Paragrafos {
     color: rgb(255, 255, 255);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size:xx-large;
+    font-size: xx-large;
 }
 
-/*Altera todos as div com button ou input*/
-
-.botoes{
-   margin: 10px;
+/* Botões */
+.botoes {
+    margin: 10px;
 }
 
-.caixaTexto{
-    color: rgb(0, 0, 0);
+.estilo {
+    background-color: rgb(0, 0, 0); 
+    color: aqua;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-a{
-    color:  rgb(0, 162, 255);
+.estilo:hover {
+    background-color: #1c9ba0;
+    transform: scale(1.05);
+}
+
+.estilo:active {
+    transform: scale(0.98);
+}
+
+/* Caixas de texto */
+.caixaTexto {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.caixaTexto:focus {
+    border-color: aqua;
+    outline: none;
+    box-shadow: 0 0 8px rgb(10, 156, 214);
+}
+
+/* Link */
+a {
+    color: rgb(138, 222, 255);
     font-family: Verdana, Geneva, Tahoma, sans-serif;   
     cursor: pointer;
 }
 
-img{
+/* Imagem do pato */
+.pato-lado img {
     width: 150px;
-    height: 200px;
-    position: relative;
-    
+    height: auto;
 }
 
-button{
-    background-color: rgb(0, 0, 0);
-    color: aqua;
+/* Responsividade */
+@media (max-width: 768px) {
+    .flex-wrapper {
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .pato-lado img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .caixaTexto {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .estilo {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .Paragrafos {
+        font-size: x-large;
+    }
+
+    a {
+        font-size: 14px;
+    }
+
+    .pato-lado img {
+        width: 100px;
+    }
 }

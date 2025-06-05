@@ -1,4 +1,4 @@
-<?php
+<div?php
  session_start();
 ?>
 
@@ -13,22 +13,24 @@
 </head>
 
 <body>
-    <section class="container">
-        <form action="processaSenha.php" method="post">
-            <div>
-                <h1 class="Paragrafos">Redefina sua senha</h1>
-                <input type="email" name="email" placeholder="email" required><br>
+    <section class="containerPrincipal">
+        <div class="container">
+            <form action="processaSenha.php" method="post">
+                <div>
+                    <h1 class="Paragrafos">Redefina sua senha</h1>
+                    <input class="caixaTexto" type="email" name="email" placeholder="email" required><br>
+                </div>
+            <?php
+            if (isset($_SESSION['erro_recuperar_senha'])) {
+                echo "<p style='color: red; font-weight: bold;'>" . $_SESSION['erro_recuperar_senha'] . "</p>";
+                unset($_SESSION['erro_recuperar_senha']); // Limpa a mensagem após exibir
+            }
+            ?>
+            <div class="botoes">
+                <button class="estilo" type="submit">Redefinir senha</button>
             </div>
-        <?php
-        if (isset($_SESSION['erro_recuperar_senha'])) {
-            echo "<p style='color: red; font-weight: bold;'>" . $_SESSION['erro_recuperar_senha'] . "</p>";
-            unset($_SESSION['erro_recuperar_senha']); // Limpa a mensagem após exibir
-        }
-        ?>
-        <div>
-            <button type="submit">Redefinir senha</button>
-        </div>
-        </form>
+            </form>
+        </div>    
     </section>
 </body>
 

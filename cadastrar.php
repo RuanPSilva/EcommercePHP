@@ -1,4 +1,4 @@
-<?php
+<div?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -11,16 +11,17 @@ session_start();
 </head>
 <body>
         
-    <section class="container">
+    <section class="containerPrincipal">
+        <div class="container">
         <h1 class="Paragrafos">Cadastre-se</h1>    
             <form action="processaCadastro.php" method="post">
                 <div class="botoes">
-                    <input type="email" name="email" placeholder="Usuario" required><br>
-                    <input type="password" name="password" placeholder="Senha" required><br>
+                    <input class="caixaTexto" type="email" name="email" placeholder="Usuario" required><br>
+                    <input class="caixaTexto" type="password" name="password" placeholder="Senha" required><br>
                     <span id="error-message" class="error"></span>
                 </div>
                 <div>
-                    <button type="submit">Cadastrar</button>
+                    <button class="estilo" type="submit">Cadastrar</button>
                 </div>
             </form>
 
@@ -30,6 +31,7 @@ session_start();
                     unset($_SESSION['conteudo']); // Limpa a mensagem após exibir
                 }
                 ?>
-    </section>
+        </div>
+</section>
 </body> 
 </html>

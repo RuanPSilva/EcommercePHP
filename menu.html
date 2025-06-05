@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Selecione tela</title>
     
 </head>
  <body>
-     <div display="inline-flex"class="Container">
+     <section class="containerPrincipal">
+        <h1 class="Paragrafo">Selecione em qual seção você quer ir</h1><br>
+        <form class="container">
+            <div class="button-redirect">
+                <input class="estilo" type="button" value="Cadastrar Produto" onclick="window.location.href='produtoManipulacao.php'">
+            </div>
 
-        <div clas="button-redirect">
-            <input type="button" value="Cadastrar Produto" onclick="window.location.href='produtoManipulacao.php'">
-        </div>
+            <div clas="button-redirect">
+                <input class="estilo" type="button" value="E-Commerce">
+            </div> 
 
-        <div clas="button-redirect">
-            <input type="button" value="E-Commerce">
-        </div> 
-
-        <div clas="button-redirect">
-            <input type="button" value="Black Friday">
-        </div>
-
-    </div>
+            <div>
+                <input class="estilo" type="button" value="Black Friday">
+            </div>
+        </form>
+    </section>
  </body>
 </html>
