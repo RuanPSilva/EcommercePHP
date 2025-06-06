@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    background-color: rgb(4, 60, 145);
+    background-color: rgb(62, 201, 206);
     width: 440px;
     padding: 20px;
     border-radius: 10px;
@@ -34,7 +34,7 @@ body {
 
 .estilo {
     background-color: rgb(0, 0, 0); 
-    color: aqua;
+    color: rgb(37, 218, 231);
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
@@ -46,7 +46,7 @@ body {
 }
 
 .estilo:hover {
-    background-color: #1c9ba0;
+    background-color: #5b5c5c;
     transform: scale(1.05);
 }
 
@@ -125,4 +125,12 @@ a {
     .pato-lado img {
         width: 100px;
     }
+}
+
+
+.descricao{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: blue;
+    justify-items: center;
+
 }

@@ -140,47 +140,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
-<body>
-    <div align-content="center">
-        <h2>Cadastro de Produto</h2>
-        <form method="POST" style='display:grid'>
+    <body>
+        <section align-content="center">
+            <h2 class="Paragrafos">Cadastro de Produto</h2>
+            <form method="POST" style='display:grid'>
+<div>
+                <label class="descricao">Código do produto</label>
+                <input class="caixaTexto" type="text" name="codigo" placeholder="Código do produto" value='<?php echo ($codigo); ?>'><br>
 
-            <label>Código do produto:</label>
-            <input type="text" name="codigo" placeholder="Código do produto" value='<?php echo ($codigo); ?>'><br>
+                <label class="descricao">Nome do produto</label>
+                <input class="caixaTexto" type="text" name="nome" placeholder="Nome do produto" value='<?php echo ($nome); ?>'><br>
 
-            <label>Nome do produto:</label>
-            <input type="text" name="nome" placeholder="Nome do produto" value='<?php echo ($nome); ?>'><br>
+                <label class="descricao">Descrição do produto</label>
+                <input class="caixaTexto" type="text" name="descricao" placeholder="Descrição" value='<?php echo ($descricao); ?>'><br>
 
-            <label>Descrição do produto:</label>
-            <input type="text" name="descricao" placeholder="Descrição" value='<?php echo ($descricao); ?>'><br>
+                <label class="descricao">Valor do produto</label>
+                <input class="caixaTexto" type="text" name="preco" placeholder="Preço" value='<?php echo ($preco); ?>'><br>
 
-            <label>Valor do produto:</label>
-            <input type="text" name="preco" placeholder="Preço" value='<?php echo ($preco); ?>'><br>
+                <label class="descricao">Caminho da imagem</label>
+                <input class="caixaTexto" type="text" name="img" placeholder="Img" value='<?php echo ($img); ?>'><br>
 
-            <label>Caminho da imagem:</label>
-            <input type="text" name="img" placeholder="Img" value='<?php echo ($img); ?>'><br>
+</div>
+                <?php
+                if (isset($_SESSION['situacao_query'])) {
+                    echo "<p style='color: red; font-weight: bold;'>" . $_SESSION['situacao_query'] . "</p>";
+                    unset($_SESSION['situacao_query']); // Limpa a mensagem após exibir
+                }
+                ?>
+                <div>
+                    <input class="estilo" type="submit" name="Pesquisar" value="Pesquisar">
+                    <input class="estilo" type="submit" name="Limpar" value="Limpar">
+                    <input class="estilo" type="submit" name="Editar" value="Editar">
+                    <input class="estilo" type="submit" name="Cadastrar" value="Cadastrar">
+                    <input class="estilo" type="submit" name="Excluir" value="Excluir">
+                    <input class="estilo" type="submit" value="Voltar para o menu" onclick="windon.location.href='menu.html'">
+                </div>
 
-            <?php
-            if (isset($_SESSION['situacao_query'])) {
-                echo "<p style='color: red; font-weight: bold;'>" . $_SESSION['situacao_query'] . "</p>";
-                unset($_SESSION['situacao_query']); // Limpa a mensagem após exibir
-            }
-            ?>
-            <div>
-                <input type="submit" name="Pesquisar" value="Pesquisar">
-                <input type="submit" name="Limpar" value="Limpar">
-                <input type="submit" name="Editar" value="Editar">
-                <input type="submit" name="Cadastrar" value="Cadastrar">
-                <input type="submit" name="Excluir" value="Excluir">
-                <input type="submit" value="Voltar para o menu" onclick="windon.location.href='menu.html'">
-            </div>
+            </form>
 
-        </form>
-
-    </div>
-</body>
+        </section>
+    </body>
 
 </html>
