@@ -13,12 +13,12 @@
 </head>
 
 <body>
-    <section class="containerPrincipal">
-        <div class="container">
+    <section id="containerSenha">
+        <div id="Senha">
             <form action="processaSenha.php" method="post">
                 <div>
-                    <h1 class="Paragrafos">Redefina sua senha</h1>
-                    <input class="caixaTexto" type="email" name="email" placeholder="email" required><br>
+                    <h1 id="paragrafoSenha">Redefina sua senha</h1>
+                    <input id="caixaTxtSenha" type="email" name="email" placeholder="email" required><br>
                 </div>
             <?php
             if (isset($_SESSION['erro_recuperar_senha'])) {
@@ -26,8 +26,8 @@
                 unset($_SESSION['erro_recuperar_senha']); // Limpa a mensagem após exibir
             }
             ?>
-            <div class="botoes">
-                <button class="estilo" type="submit">Redefinir senha</button>
+            <div id="botaoRecuperar">
+                <button id="estiloSenha" type="submit">Redefinir senha</button>
             </div>
             </form>
         </div>    
