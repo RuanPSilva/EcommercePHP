@@ -47,7 +47,8 @@ if($resultadoQuery){
     echo $linha['preco_prod'];
     echo("</td>");
     echo("<td>");
-    echo $linha['img_path'];
+    echo("<img src='{$linha['img_path']}'>");
+    //echo $linha['img_path'];
     echo("</td>");
     echo("</tr>");
 }

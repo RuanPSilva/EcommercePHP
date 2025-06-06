@@ -70,10 +70,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if ($resultadoQuery->num_rows > 0) {
                     $_SESSION['situacao_query'] = "O código:$codigo já está sendo utilizado!";
                 }
-            } else {
+                else {
                 $resultadoQuery = db_query("insert into tb_produto values(null,$codigo,'$nome','$descricao',$preco,'$img');", $mySQL);
                 $_SESSION['situacao_query'] = "Cadastro efetuado com sucesso!";
             }
+            } 
         } else {
             $_SESSION['situacao_query'] = "O código não pode ser cadastrado vazio!";
         }
@@ -104,13 +105,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
     if (isset($_POST['Excluir'])) {
-
+         $codigo = $_POST["codigo"];
          if ($codigo != null) {
             $resultadoQuery = db_query("select * from tb_produto where cod_prod = $codigo;", $mySQL);
 
             if ($resultadoQuery) {
                 if ($resultadoQuery->num_rows > 0) {
-                    $resultadoQuery = db_query("select * from tb_produto where cod_prod = $codigo;", $mySQL);
+                    $resultadoQuery = db_query("delete from tb_produto where cod_prod = $codigo;", $mySQL);
+                    $_SESSION['situacao_query'] = "O código:$codigo ja foi de arrasta!";
                 } else {
                     $_SESSION['situacao_query'] = "O código:$codigo não existe!";
                 }
