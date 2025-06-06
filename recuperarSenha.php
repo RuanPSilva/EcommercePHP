@@ -27,7 +27,7 @@
             }
             ?>
             <div id="botaoRecuperar">
-                <button id="estiloSenha" type="submit">Redefinir senha</button>
+                <button class="botoesGeral" type="submit">Redefinir senha</button>
             </div>
             </form>
         </div>    

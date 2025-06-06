@@ -21,12 +21,12 @@ session_start();
 
                 <span id="error-message" class="error"></span>
                 
-                <div class="botoesLogin">
-                    <button type="submit" class="botoesEstilo">Entrar</button>
+                <div class="botaoLogin">
+                    <button type="submit" class="botoesGeral">Entrar</button>
                 </div>
                 
                 <div>
-                    <button value="Cadastre-se" class="botoesEstilo" onclick="window.location.href='cadastrar.php'">Cadastre-se</button>
+                    <button value="Cadastre-se" class="botoesGeral" onclick="window.location.href='cadastrar.php'">Cadastre-se</button>
                 </div> 
                 <div>
                     <a onclick="window.location.href='recuperarSenha.php'">Recupere sua senha</a>
