@@ -2,7 +2,7 @@
 session_start();
 $dataInicio = '';
 $dataFim = '';
-
+$desconto = 50;
 function db_query($cmd, $conn)
 {
     try {
@@ -60,6 +60,10 @@ try{
 <label class="">Data de fim:</label>
 <input class="" type="datetime-local" name="datafim" value='<?php echo ($dataFim); ?>'><br>
 
+<label class="">Porcentagem de desconto:</label>
+<input class="" type="number" name="desconto" min="1" max="100" placeholder="Valores entre 1 e 100" value='<?php echo ($desconto).'%'; ?>'><br>
+
+<progress value="<?php echo($desconto); ?>" max="100"></progress>
 <?php
 if (isset($_SESSION['situacao_query'])) {
     echo "<p style='color: white; font-weight: bold;'>" . $_SESSION['situacao_query'] . "</p>";

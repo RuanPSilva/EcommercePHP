@@ -20,7 +20,8 @@ create table tb_produto(
 create table tb_black(
     data_inicio datetime,
     data_fim datetime,
-    ano varchar(4)
+    desconto int,
+    ano varchar(4),
 );
 
 

@@ -155,19 +155,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form class="produto" method="POST" style='display:grid'>
 
                 <label class="descricao">Código do produto</label>
-                <center><input class="caixaTxtProduto" type="text" name="codigo" placeholder="Código do produto" value='<?php echo ($codigo); ?>'></center><br>
+                <center><input class="caixaTxtProduto" type="text" name="codigo" placeholder="Ex. 10" value='<?php echo ($codigo); ?>'></center><br>
 
                 <label class="descricao">Nome do produto</label>
-                <center><input class="caixaTxtProduto" type="text" name="nome" placeholder="Nome do produto" value='<?php echo ($nome); ?>'></center><br>
+                <center><input class="caixaTxtProduto" type="text" name="nome" placeholder="Ex. Bicicleta" value='<?php echo ($nome); ?>'></center><br>
 
                 <label class="descricao">Descrição do produto</label>
-                <center><input class="caixaTxtProduto" type="text" name="descricao" placeholder="Descrição" value='<?php echo ($descricao); ?>'></center><br>
+                <center><input class="caixaTxtProduto" type="text" name="descricao" placeholder="Ex. Rápida leve e resistente" value='<?php echo ($descricao); ?>'></center><br>
 
                 <label class="descricao">Valor do produto</label>
-                <center><input class="caixaTxtProduto" type="text" name="preco" placeholder="Preço" value='<?php echo ($preco); ?>'></center><br>
+                <center><input class="caixaTxtProduto" type="text" name="preco" placeholder="Ex. 4999.99" value='<?php echo ($preco); ?>'></center><br>
 
                 <label class="descricao">Caminho da imagem</label>
-                <center><input class="caixaTxtProduto" type="text" name="img" placeholder="Img" value='<?php echo ($img); ?>'></center><br>
+                <center><input class="caixaTxtProduto" type="text" name="img" placeholder="Ex. Img/exemplo.jpg" value='<?php echo ($img); ?>'></center><br>
 
 
                 <?php
