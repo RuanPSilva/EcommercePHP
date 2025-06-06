@@ -141,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Produtos</title>
 </head>
 
     <body>
@@ -178,12 +178,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input class="estilo" type="submit" name="Editar" value="Editar">
                     <input class="estilo" type="submit" name="Cadastrar" value="Cadastrar">
                     <input class="estilo" type="submit" name="Excluir" value="Excluir">
-                    <input class="estilo" type="submit" value="Voltar para o menu" onclick="windon.location.href='menu.html'">
+                    <input class="estilo" type="button" value="Retornar menu" onclick="retornarMenu()" ></input>
                 </div>
 
             </form>
 
         </section>
     </body>
-
+<script src="JavaScipt.js"></script>
 </html>

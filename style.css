@@ -76,7 +76,7 @@ body {
 
 /* Link */
 a {
-    color: rgb(138, 222, 255);
+    color: rgb(0, 0, 0);
     font-family: Verdana, Geneva, Tahoma, sans-serif;   
     cursor: pointer;
 }
@@ -133,4 +133,26 @@ a {
 .descricao{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(0, 0, 0);
+}
+
+.retorno{
+    background-color: aquamarine;
+
+}
+
+td{
+    background-color: #ccc;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+tr{
+    
+    color: black;
+
+}
+
+#tabelinha{
+    background-color: grey;
+
 }
