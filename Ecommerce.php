@@ -13,26 +13,8 @@ try {
 /***********************************************************************************/
 /*Listar usuarios*/
 $resultadoQuery = db_query('select * from tb_produto;', $mySQL);
-if ($resultadoQuery) {
-    echo ("<div id='tabelinha'>");
-    echo ("<Table border>");
-    echo ("<tr>");
-    echo ("<td>");
-    echo ("Cod");
-    echo ("</td>");
-    echo ("<td>");
-    echo ("Nome");
-    echo ("</td>");
-    echo ("<td>");
-    echo ("Descricao");
-    echo ("</td>");
-    echo ("<td>");
-    echo ("Preco");
-    echo ("</td>");
-    echo ("<td>");
-    echo ("Imagem");
-    echo ("</td>");
-    echo ("</tr>");
+if($resultadoQuery){
+
 
     while ($linha = $resultadoQuery->fetch_assoc()) {
         echo ("<tr>");
@@ -54,7 +36,8 @@ if ($resultadoQuery) {
         echo ("</tr>");
     }
     echo ("</div>");
-} else {
+}
+else {
     echo ("Não deu certo");
 }
 
