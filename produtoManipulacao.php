@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <?php
                 if (isset($_SESSION['situacao_query'])) {
-                    echo "<p style='color: red; font-weight: bold;'>" . $_SESSION['situacao_query'] . "</p>";
+                    echo "<p style='color: white; font-weight: bold;'>" . $_SESSION['situacao_query'] . "</p>";
                     unset($_SESSION['situacao_query']); // Limpa a mensagem após exibir
                 }
                 ?>
