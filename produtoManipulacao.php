@@ -145,26 +145,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
     <body>
-        <section align-content="center">
-            <h2 class="Paragrafos">Cadastro de Produto</h2>
-            <form method="POST" style='display:grid'>
-<div>
+         <h2 class="Paragrafos">Cadastro de Produto</h2>
+        <section class="containerPrincipal">
+           
+            <form class="container" method="POST" style='display:grid'>
+
                 <label class="descricao">Código do produto</label>
-                <input class="caixaTexto" type="text" name="codigo" placeholder="Código do produto" value='<?php echo ($codigo); ?>'><br>
+                <center><input class="caixaTexto" type="text" name="codigo" placeholder="Código do produto" value='<?php echo ($codigo); ?>'></center><br>
 
                 <label class="descricao">Nome do produto</label>
-                <input class="caixaTexto" type="text" name="nome" placeholder="Nome do produto" value='<?php echo ($nome); ?>'><br>
+                <center><input class="caixaTexto" type="text" name="nome" placeholder="Nome do produto" value='<?php echo ($nome); ?>'></center><br>
 
                 <label class="descricao">Descrição do produto</label>
-                <input class="caixaTexto" type="text" name="descricao" placeholder="Descrição" value='<?php echo ($descricao); ?>'><br>
+                <center><input class="caixaTexto" type="text" name="descricao" placeholder="Descrição" value='<?php echo ($descricao); ?>'></center><br>
 
                 <label class="descricao">Valor do produto</label>
-                <input class="caixaTexto" type="text" name="preco" placeholder="Preço" value='<?php echo ($preco); ?>'><br>
+                <center><input class="caixaTexto" type="text" name="preco" placeholder="Preço" value='<?php echo ($preco); ?>'></center><br>
 
                 <label class="descricao">Caminho da imagem</label>
-                <input class="caixaTexto" type="text" name="img" placeholder="Img" value='<?php echo ($img); ?>'><br>
+                <center><input class="caixaTexto" type="text" name="img" placeholder="Img" value='<?php echo ($img); ?>'></center><br>
 
-</div>
+
                 <?php
                 if (isset($_SESSION['situacao_query'])) {
                     echo "<p style='color: red; font-weight: bold;'>" . $_SESSION['situacao_query'] . "</p>";
