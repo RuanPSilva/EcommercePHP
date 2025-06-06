@@ -9,13 +9,14 @@ try {
 } catch (mysqli_sql_exception $e) {
     echo ("O seu burro tá errado");
 }
-
+    
 /***********************************************************************************/
 /*Listar usuarios*/
 $resultadoQuery = db_query('select * from tb_produto;', $mySQL);
 if ($resultadoQuery) {
-
-echo ("<div id='tabelhinha'>");
+    echo('<body>');
+    echo ("<div id='tabelinha'>");
+    echo("<Table border>");
     echo ("<tr>");
     echo ("<td>");
     echo ("Cod");
@@ -33,6 +34,7 @@ echo ("<div id='tabelhinha'>");
     echo ("Imagem");
     echo ("</td>");
     echo ("</tr>");
+    echo('</body>');
     while ($linha = $resultadoQuery->fetch_assoc()) {
 
         echo ("<tr>");
@@ -54,7 +56,9 @@ echo ("<div id='tabelhinha'>");
         echo ("</tr>");
     }
 echo ("</div>");
-} else {
+echo("<input class='estilo' type='button' value='Retornar menu' onclick='retornarMenu()'></input>");
+} 
+else {
     echo ("Não deu certo");
 }
 
@@ -80,10 +84,6 @@ function db_query($cmd, $conn)
 
     <title>Ecommerce</title>
 </head>
-
-<body>
-    <input class="estilo" type="button" value="Retornar menu" onclick="retornarMenu()"></input>
-</body>
 
 <script src="JavaScipt.js"></script>
 

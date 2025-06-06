@@ -5,14 +5,6 @@ $nome = '';
 $descricao = '';
 $preco = '';
 $img = '';
-function db_query($cmd, $conn)
-{
-    try {
-        return $conn->query($cmd);
-    } catch (mysqli_sql_exception $e) {
-        echo ("Dados incorretos");
-    }
-}
 
 try {
     $mySQL = new mysqli(
@@ -24,6 +16,16 @@ try {
 } catch (mysqli_sql_exception $e) {
     echo ("O seu burro tá errado");
 }
+
+function db_query($cmd, $conn)
+{
+    try {
+        return $conn->query($cmd);
+    } catch (mysqli_sql_exception $e) {
+        echo ("Deu Errado");
+    }
+}
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_start();

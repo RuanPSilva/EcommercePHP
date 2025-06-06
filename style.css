@@ -231,6 +231,9 @@ a {
 
 }
 
+#menu, div{
+    padding: 10px;
+}
 
 #paragrafoMenu{
     color: white;
@@ -307,6 +310,6 @@ tr{
 
 #tabelinha{
     background-color: grey;
-
+    border: 10px;
 }
 

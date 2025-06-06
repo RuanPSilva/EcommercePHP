@@ -2,26 +2,26 @@
 session_start();
 $dataInicio = '';
 $dataFim = '';
-// function db_query($cmd, $conn){
-//     try{
-//     return $conn->query($cmd);
-//     }
-//     catch(mysqli_sql_exception $e){
-//         echo("Dados incorretos");
 
-//     }
-// }
+function db_query($cmd, $conn)
+{
+    try {
+        return $conn->query($cmd);
+    } catch (mysqli_sql_exception $e) {
+        echo ("Deu Errado");
+    }
+}
 
-// try{
-//     $mySQL= new mysqli(
-//         "localhost",//HOST
-//         "root",     //PERFIL     
-//         "12345678", //SENHA
-//         "db_2ads"    //NOME DA DATABASE
-//     );
-//     }catch(mysqli_sql_exception $e){
-//         echo("O seu burro tá errado");
-//     }
+try{
+    $mySQL= new mysqli(
+        "localhost",//HOST
+        "root",     //PERFIL     
+        "12345678", //SENHA
+        "db_2ads"    //NOME DA DATABASE
+    );
+    }catch(mysqli_sql_exception $e){
+        echo("O seu burro tá errado");
+    }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
