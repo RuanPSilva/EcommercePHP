@@ -17,9 +17,6 @@ create table tb_produto(
     img_path varchar (100)
 );
 
-insert into tb_produto values (null, 'Teste', 'TesteTeste',10.2,'jkhsgfdsgkjdsa');
-select * from tb_produto where cod_prod = 1;
-
 create table tb_black(
     data_inicio datetime,
     data_fim datetime,
