@@ -1,61 +1,39 @@
+/*Cor de fundo para todas as paginas*/
 body {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(54, 54, 54);
     text-align: center;
 }
 
-.containerPrincipal {
+/*Tela de login*/
+.containerLogin {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5%;
     gap: 30px;
     flex-wrap: wrap;
+    
 }
-
-.container {
-    background-color: rgb(0, 247, 255);
+/*ContainerLogin*/
+.Login {
+    background-color: rgb(94, 94, 94);
     width: 440px;
     padding: 20px;
     border-radius: 10px;
+    border: 5px solid rgb(153, 153, 155); 
     text-align: center;
 }
 
-/* Título */
-.Paragrafos {
+
+/* TítulosLogin */
+.paragrafosLogin {
     color: rgb(255, 255, 255);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: xx-large;
 }
 
-/* Botões */
-.botoes {
-    margin: 10px;
-}
-
-.estilo {
-    background-color: rgb(0, 0, 0); 
-    color: rgb(37, 218, 231);
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.estilo:hover {
-    background-color: #5b5c5c;
-    transform: scale(1.05);
-}
-
-.estilo:active {
-    transform: scale(0.98);
-}
-
-/* Caixas de texto */
-.caixaTexto {
+/*Caixa de textos estilização*/
+.caixaTextoLogin {
     width: 80%;
     max-width: 300px;
     padding: 12px 16px;
@@ -68,24 +46,49 @@ body {
     
 }
 
-.caixaTexto:focus {
+.caixaTextoLogin:focus {
     border-color: aqua;
     outline: none;
     box-shadow: 0 0 8px rgb(10, 156, 214);
 }
 
-/* Link */
+/*Espaçamento Login*/
+.botoesLogin {
+    margin: 10px;
+}
+
+/*Estilização dos botões do Login*/
+.botoesEstilo {
+    background-color: rgb(0, 0, 0); 
+    color: rgb(255, 255, 255);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botoesEstilo:hover {
+    background-color: #aeafaf;
+    transform: scale(1.05);
+}
+
+.botoesEstilo:active {
+    transform: scale(0.98);
+}
+
+
+
+/*Link Recuperar senha*/
 a {
-    color: rgb(0, 0, 0);
+    color: rgb(0, 217, 255);
     font-family: Verdana, Geneva, Tahoma, sans-serif;   
     cursor: pointer;
 }
 
-/* Imagem do pato */
-.pato-lado img {
-    width: 150px;
-    height: auto;
-}
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -100,9 +103,7 @@ a {
         margin: 0 auto;
     }
 
-    .pato-lado img {
-        width: 120px;
-    }
+ 
 }
 
 @media (max-width: 480px) {
@@ -123,11 +124,9 @@ a {
     a {
         font-size: 14px;
     }
-
-    .pato-lado img {
-        width: 100px;
-    }
 }
+
+
 
 
 .descricao{

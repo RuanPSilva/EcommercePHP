@@ -11,19 +11,22 @@ session_start();
 </head>
 <body>
 
-    <div class="containerPrincipal">
-        <div class="container">
-            <h2 class="Paragrafos">Login</h2>
+    <section class="containerLogin">
+        <div class="Login">
+            <h2 class="paragrafosLogin">Login</h2>
             <form action="processaLogin.php" method="post">
-                <input class="caixaTexto" type="email" name="email" placeholder="Email" required><br>
-                <input class="caixaTexto" type="password" name="password" placeholder="Senha" required><br> 
+                <input class="caixaTextoLogin" type="email" name="email" placeholder="Email" required><br>
+
+                <input class="caixaTextoLogin" type="password" name="password" placeholder="Senha" required><br> 
+
                 <span id="error-message" class="error"></span>
                 
-                <div class="botoes">
-                    <button type="submit" class="estilo">Entrar</button>
+                <div class="botoesLogin">
+                    <button type="submit" class="botoesEstilo">Entrar</button>
                 </div>
-                <div class="botoes">
-                    <button value="Cadastre-se" class="estilo" onclick="window.location.href='cadastrar.php'">Cadastre-se</button>
+                
+                <div>
+                    <button value="Cadastre-se" class="botoesEstilo" onclick="window.location.href='cadastrar.php'">Cadastre-se</button>
                 </div> 
                 <div>
                     <a onclick="window.location.href='recuperarSenha.php'">Recupere sua senha</a>
@@ -42,11 +45,7 @@ session_start();
                 }
             ?>
         </div>
-
-        <div class="pato-lado">
-            <img src="img/pato1.png" alt="Pato estiloso">
-        </div>
-    </div>
+    </section>
 
 </body>
 </html>
