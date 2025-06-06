@@ -210,9 +210,10 @@ a {
 }
 
 
+
 /*Tela menu*/
 #containerMenu{
- display: flex;
+     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5%;
@@ -238,10 +239,54 @@ a {
 }
 
 
-.descricao{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgb(0, 0, 0);
+/*Tela produtoManipulacao*/
+
+#paragrafoProduto{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large;
 }
+
+.containerProduto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    gap: 30px;
+    flex-wrap: wrap;
+
+}
+
+.produto{
+    background-color: rgb(94, 94, 94);
+    width: 440px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 5px solid rgb(153, 153, 155); 
+    text-align: center;
+}
+
+
+
+.descricao{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+
+.caixaTxtProduto{
+    width: 80%;
+    max-width: 300px;
+    padding: 12px 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+
+}
+
 
 .retorno{
     background-color: aquamarine;
@@ -264,3 +309,4 @@ tr{
     background-color: grey;
 
 }
+

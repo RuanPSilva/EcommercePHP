@@ -147,25 +147,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
     <body>
-         <h2 class="Paragrafos">Cadastro de Produto</h2>
-        <section class="containerPrincipal">
+         <h2 id="paragrafoProduto">Cadastro de Produto</h2>
+        <section class="containerProduto">
            
-            <form class="container" method="POST" style='display:grid'>
+            <form class="produto" method="POST" style='display:grid'>
 
                 <label class="descricao">Código do produto</label>
-                <center><input class="caixaTexto" type="text" name="codigo" placeholder="Código do produto" value='<?php echo ($codigo); ?>'></center><br>
+                <center><input class="caixaTxtProduto" type="text" name="codigo" placeholder="Código do produto" value='<?php echo ($codigo); ?>'></center><br>
 
                 <label class="descricao">Nome do produto</label>
-                <center><input class="caixaTexto" type="text" name="nome" placeholder="Nome do produto" value='<?php echo ($nome); ?>'></center><br>
+                <center><input class="caixaTxtProduto" type="text" name="nome" placeholder="Nome do produto" value='<?php echo ($nome); ?>'></center><br>
 
                 <label class="descricao">Descrição do produto</label>
-                <center><input class="caixaTexto" type="text" name="descricao" placeholder="Descrição" value='<?php echo ($descricao); ?>'></center><br>
+                <center><input class="caixaTxtProduto" type="text" name="descricao" placeholder="Descrição" value='<?php echo ($descricao); ?>'></center><br>
 
                 <label class="descricao">Valor do produto</label>
-                <center><input class="caixaTexto" type="text" name="preco" placeholder="Preço" value='<?php echo ($preco); ?>'></center><br>
+                <center><input class="caixaTxtProduto" type="text" name="preco" placeholder="Preço" value='<?php echo ($preco); ?>'></center><br>
 
                 <label class="descricao">Caminho da imagem</label>
-                <center><input class="caixaTexto" type="text" name="img" placeholder="Img" value='<?php echo ($img); ?>'></center><br>
+                <center><input class="caixaTxtProduto" type="text" name="img" placeholder="Img" value='<?php echo ($img); ?>'></center><br>
 
 
                 <?php
@@ -175,12 +175,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 ?>
                 <div>
-                    <input class="estilo" type="submit" name="Pesquisar" value="Pesquisar">
-                    <input class="estilo" type="submit" name="Limpar" value="Limpar">
-                    <input class="estilo" type="submit" name="Editar" value="Editar">
-                    <input class="estilo" type="submit" name="Cadastrar" value="Cadastrar">
-                    <input class="estilo" type="submit" name="Excluir" value="Excluir">
-                    <input class="estilo" type="button" value="Retornar menu" onclick="retornarMenu()" ></input>
+                    <input class="botoesGeral" type="submit" name="Pesquisar" value="Pesquisar">
+                    <input class="botoesGeral" type="submit" name="Limpar" value="Limpar">
+                    <input class="botoesGeral" type="submit" name="Editar" value="Editar">
+                    <input class="botoesGeral" type="submit" name="Cadastrar" value="Cadastrar">
+                    <input class="botoesGeral" type="submit" name="Excluir" value="Excluir">
+                    <input class="botoesGeral" type="button" value="Retornar menu" onclick="retornarMenu()" ></input>
                 </div>
 
             </form>
